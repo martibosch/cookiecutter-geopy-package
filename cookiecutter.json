@@ -1,0 +1,10 @@
+{
+    "project_name": "My GeoPython package",
+    "project_description": "Python package that builds upon GDAL (from conda-forge).",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+    "python_module_name": "{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "version": "0.1.0",
+    "author_name": "Martí Bosch",
+    "email": "marti.bosch@epfl.ch",
+    "github_username": "martibosch"
+}
