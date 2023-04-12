@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.repo_name }}"
+version = "0.1.0"
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+authors = [{
+    name = "{{ cookiecutter.author_name }}",
+    email = "{{ cookiecutter.email }}",
+}]
+license = { text = "GPL-3.0" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+packages = [
+    { include = "{{ cookiecutter.python_module_name }}" },
+]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+select = ["D", "E", "F", "I"]
+
+[tool.ruff.isort]
+known-first-party = ["{{ cookiecutter.python_module_name }}"]
+
+[tool.ruff.per-file-ignores]
+"{{ cookiecutter.python_module_name }}/__init__.py" = ["F403"]
+
+[tool.coverage.run]
+source = ["{{ cookiecutter.python_module_name }}"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "if self.debug:",
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "except ModuleNotFoundError",
+    "except ImportError",
+]
+ignore_errors = true
+omit = ["tests/*", "docs/conf.py"]

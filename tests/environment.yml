@@ -1,0 +1,11 @@
+name: dev-env
+
+channels:
+    - conda-forge
+
+dependencies:
+  - cookiecutter
+  - git
+  - pre-commit
+  - pytest
+  - pytest-cookies

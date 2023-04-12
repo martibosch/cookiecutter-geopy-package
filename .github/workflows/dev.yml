@@ -1,0 +1,38 @@
+name: dev workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        python-versions: ["3.10"]
+        os: [ubuntu-latest]
+        include:
+          - miniforge-variant: Mambaforge
+            miniforge-version: 4.11.0-4
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup conda environment with mambaforge
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          use-mamba: true
+          python-version: ${{ matrix.python-version }}
+          miniforge-variant: ${{ matrix.miniforge-variant }}
+          miniforge-version: ${{ matrix.miniforge-version }}
+          environment-file: tests/environment.yml
+
+      - name: pytest
+        run: pytest -s tests
