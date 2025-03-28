@@ -16,9 +16,9 @@ This project template includes the following features to ensure best practices:
   - [coverage](https://coverage.readthedocs.io) reporting with [codecov](https://codecov.io) integration.
 - **Documentation**: generated with [sphinx](https://www.sphinx-doc.org), using [MyST](https://myst-parser.readthedocs.io) for Markdown support, auto API generation from docstrings and hosting on [readthedocs](https://readthedocs.org).
 - **Code quality**: set up with [pre-commit](https://pre-commit.com) to run checks and tests before each commit, including, among others:
-  - [black](https://black.readthedocs.io) for code formatting.
-  - [ruff](https://beta.ruff.rs) for code linting and formatting.
-  - [prettier](https://prettier.io) to format configuration files.
+  - [ruff](https://beta.ruff.rs) for Python code linting and formatting
+  - [codespell](https://github.com/codespell-project/codespell) to check for common misspellings
+  - [pyupgrade](https://github.com/asottile/pyupgrade) to automate upgrade syntax for newer Python versions
 - **Continuous integration and delivery** with [GitHub Actions](https://github.com/features/actions), with jobs to run tests, publishing to test PyPI and releasing to PyPI and GitHub on new tags.
 - **Conventional commits and semantic versioning** with [commitizen](https://commitizen-tools.github.io/commitizen) to enforce [conventional commits](https://www.conventionalcommits.org) (with `commit-msg` pre-commit hooks), version bumping using [semantic versioning](https://semver.org) and automated change log generation.
 
