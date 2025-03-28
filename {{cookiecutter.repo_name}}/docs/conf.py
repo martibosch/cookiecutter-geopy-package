@@ -1,3 +1,5 @@
+"""Documentation configuration."""
+
 import os
 import sys
 
