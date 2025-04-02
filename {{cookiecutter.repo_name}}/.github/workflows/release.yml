@@ -65,8 +65,8 @@ jobs:
         id: changelog
         uses: requarks/changelog-action@v1
         with:
-          token: ${{ github.token }}
-          tag: ${{ github.ref_name }}
+          token: {% raw %}${{ github.token }}{% endraw %}
+          tag: {% raw %}${{ github.ref_name }}{% endraw %}
 
       - name: create release
         uses: ncipollo/release-action@v1.16.0
@@ -74,9 +74,9 @@ jobs:
           allowUpdates: true
           draft: false
           makeLatest: true
-          name: ${{ github.ref_name }}
-          body: ${{ steps.changelog.outputs.changes }}
-          token: ${{ github.token }}
+          name: {% raw %}${{ github.ref_name }}{% endraw %}
+          body: {% raw %}${{ steps.changelog.outputs.changes }}{% endraw %}
+          token: {% raw %}${{ github.token }}{% endraw %}
 
       - uses: actions/download-artifact@v4
         with:
@@ -97,5 +97,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: main
-          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+          commit_message: 'docs: update CHANGELOG.md for {% raw %}${{ github.ref_name }}{% endraw %} [skip ci]'
           file_pattern: CHANGELOG.md

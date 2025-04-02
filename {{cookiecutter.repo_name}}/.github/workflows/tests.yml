@@ -19,7 +19,7 @@ jobs:
           - os: windows-latest
             python-version: "3.13"
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     defaults:
       run:
         shell: bash -l {0}
@@ -31,7 +31,7 @@ jobs:
         with:
           environment-name: test-env
           create-args: >-
-            python=${{ matrix.python-version }}
+            python={% raw %}${{ matrix.python-version }}{% endraw %}
             pip
 
       - name: install dependencies
@@ -45,7 +45,7 @@ jobs:
       - name: upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
 
       - name: list files
         run: ls -l .
