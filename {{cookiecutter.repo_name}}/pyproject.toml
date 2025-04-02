@@ -100,7 +100,7 @@ known-first-party = [
 "**/__init__.py" = [
   "F401"
 ]
-"tests/test_"{{ cookiecutter.python_module_name }}".py" = [
+"tests/test_{{ cookiecutter.python_module_name }}.py" = [
   "D"
 ]
 
