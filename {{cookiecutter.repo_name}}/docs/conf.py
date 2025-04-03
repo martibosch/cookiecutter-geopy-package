@@ -2,13 +2,14 @@
 
 import os
 import sys
+import pkg_resources
 
 project = "{{ cookiecutter.project_name }}"
 author = "{{ cookiecutter.author_name }}"
 
-__version__ = "{{ cookiecutter.version }}"
-version = __version__
-release = __version__
+release = pkg_resources.get_distribution("{{ cookiecutter.python_module_name }}").version
+version = ".".join(release.split(".")[:2])
+
 
 extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "myst_parser"]
 

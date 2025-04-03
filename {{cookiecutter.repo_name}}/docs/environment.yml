@@ -8,3 +8,4 @@ dependencies:
   - sphinx=8.2.3
   - pip=25.0.1
   - pydata-sphinx-theme=0.16.1
+  - setuptools=75.8.2
