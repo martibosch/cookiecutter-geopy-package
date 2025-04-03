@@ -14,7 +14,7 @@ This project template includes the following features to ensure best practices:
 - **Tests**:
   - [tox](https://tox.wiki) for testing against multiple Python versions, with support for conda dependencies using [tox-conda](https://github.com/tox-dev/tox-conda) and GitHub Actions using [tox-gh-actions](https://github.com/ymyzk/tox-gh-actions).
   - [coverage](https://coverage.readthedocs.io) reporting with [codecov](https://codecov.io) integration.
-- **Documentation**: generated with [sphinx](https://www.sphinx-doc.org), using [MyST](https://myst-parser.readthedocs.io) for Markdown support, auto API generation from docstrings and hosting on [readthedocs](https://readthedocs.org).
+- **Documentation**: generated with [sphinx](https://www.sphinx-doc.org), using [MyST](https://myst-parser.readthedocs.io) for Markdown support, auto API generation from docstrings and hosting on [readthedocs](https://readthedocs.org) with the [pydata-sphinx-theme](https://github.com/pydata/pydata-sphinx-theme).
 - **Code quality**: set up with [pre-commit](https://pre-commit.com) to run checks and tests before each commit, including, among others:
   - [ruff](https://beta.ruff.rs) for Python code linting and formatting
   - [codespell](https://github.com/codespell-project/codespell) to check for common misspellings
