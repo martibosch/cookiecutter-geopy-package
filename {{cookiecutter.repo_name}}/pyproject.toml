@@ -19,9 +19,6 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13"
 ]
-packages = [
-  {include = "{{ cookiecutter.python_module_name }}"}
-]
 
 [project.license]
 text = "GPL-3.0"
