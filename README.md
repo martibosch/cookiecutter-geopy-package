@@ -37,16 +37,13 @@ and fill in the prompts. Then, navigate to the generated directory and follow th
 - Initialize a git repository (e.g., `git init`) and install the pre-commit hooks by running `pre-commit install` and `pre-commit install --hook-type commit-msg`.
 - Register the project in [codecov](https://codecov.io) and [readthedocs](https://readthedocs.org).
 - If the repository is public, enable [pre-commit.ci](https://pre-commit.ci) to automatically run pre-commit checks on GitHub and autoupdate the pre-commit hook versions.
-- Create accounts (or use existing accounts) and [API tokens](https://pypi.org/help/#apitoken) for [PyPI](https://pypi.org) and [test PyPI](https://test.pypi.org), and add them to the project's [secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) in GitHub.
+- Create accounts (or use existing accounts) and [set up pending publishers for the github repository](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/) for [PyPI](https://pypi.org) and [test PyPI](https://test.pypi.org). Enter "release.yml" in the "Workflow name" field and respectively "pypi" and "testpypi" in the "Environment name" field.
 
 You can then start developing your package.
-
-### Development
 
 ### Submit a recipe to conda-forge
 
 If you want your package to be available from [conda-forge](https://conda-forge.org), you can generate a recipe for it using [grayskull](https://github.com/conda/grayskull) and then submit it by following the instructions in the [conda-forge documentation](https://conda-forge.org/docs/maintainer/adding_pkgs.html#forking-and-pull-request).
 
 ## Acknowledgements
-
 - This template borrows several ideas from [zillionare/python-project-wizard](https://github.com/zillionare/python-project-wizard).
